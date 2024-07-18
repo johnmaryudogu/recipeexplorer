@@ -11,6 +11,14 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
+
+import os
+
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -18,12 +26,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-72vwytyaq8gve#ul0s&fuw9kn&a2e1-1oezcpw11$rqpz-z#-i'
-
-# openai
-OPENAI_API_KEY = 'sk-proj-Zz2X360jEA0tXRiMCkcnT3BlbkFJbDrCiAtwAGYWx8o9M3BI'
 
 
 

@@ -25,12 +25,15 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from .models import Recipe
+import os
 
 # Set up logging
 logger = logging.getLogger(__name__)
 
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+
 # Initialize the OpenAI client
-client = OpenAI(api_key=settings.OPENAI_API_KEY)
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
